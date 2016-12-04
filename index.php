@@ -9,6 +9,9 @@ if($_GET["wyloguj"]=="tak"){$_SESSION["zalogowany"]=0;echo "Zostałeś wylogowan
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <BODY>
+
+https://github.com/ArTp134/Zadanie-laboratoryjne-PAS-z7
+<br>
 Formularz logowania
 <form method="post" action="weryfikuj.php">
 Login:<input type="text" name="user" maxlength="20" size="20"><br>
