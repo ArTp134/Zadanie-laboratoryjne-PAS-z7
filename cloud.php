@@ -12,7 +12,6 @@ echo "<br>";
 $dir = $_SESSION['user'];
 chdir($dir);
 $_SESSION['local'] = getcwd();
-
 $files = scandir('.');
 foreach($files as $file) {
     if($file == '.' || $file == '..') 

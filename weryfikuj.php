@@ -9,7 +9,6 @@ session_start();
 <?php
 if($_SESSION["zalogowany"]!=1)
 {
-	
 $user=$_POST['user'];
 $pass=$_POST['pass'];
 $_SESSION['user'] = $user;
@@ -28,11 +27,10 @@ $rekord = mysql_fetch_array($result);
 		mysql_close($conn);
 		echo "Brak użytkownika o takim loginie !";
 	}
-	else //jest user
+	else 
 	{ 
-		if($rekord['pass']==$pass && $rekord['blokada'] == "nie") //jezeli haslo i brak blokady
+		if($rekord['pass']==$pass && $rekord['blokada'] == "nie")
 		{
-			//echo "Logowanie Ok";
 			$_SESSION["zalogowany"]=1;
 			$insert = "INSERT INTO logi (user,status) VALUES ('$user', 'zalogowany');";
 			$sql1 = mysql_query($insert);
@@ -40,7 +38,7 @@ $rekord = mysql_fetch_array($result);
 			$sql3 = mysql_query($update);
 			echo '<meta http-equiv="refresh" content="1; URL=cloud.php">';
 		}
-		else //zle haslo lub blokada
+		else 
 		{
 			if($rekord['logowanie'] < 2){
 				$logowanie = $rekord['logowanie'] + 1;

@@ -22,7 +22,7 @@ if (IsSet($_POST['rejestruj'])) {
 		if( $rows == 1)
 		{
 			echo "<script>
-			alert('Istnieje użytkownik o takim haśle');
+			alert('Istnieje użytkownik o takiej nazwie !');
 			</script>";
 		}
 		elseif ($row == 0)
@@ -37,6 +37,7 @@ mysql_close($conn);
 ?>
 Formularz rejestracji
 <br>
+<a href="index.php" style="">Wróć do formularza logowania</a></p>
 <form method="post">
 Podaj login:<input type="text" name="user" maxlength="20" size="20"><br>
 Podaj hasło:<input type="password" name="pass" maxlength="20" size="20"><br>
