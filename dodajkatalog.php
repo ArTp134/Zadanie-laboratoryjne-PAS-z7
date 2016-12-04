@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$nazwa = $_SESSION['user']."/".$_POST['nazwa'];
-echo "U :". $nazwa;
+$nazwa = $_SESSION['local']."/".$_POST['nazwa'];
 mkdir($nazwa);
-//echo '<meta http-equiv="refresh" content="1; URL=cloud.php">';
+echo '<meta http-equiv="refresh" content="1; URL=cloud.php">';
+
 ?>

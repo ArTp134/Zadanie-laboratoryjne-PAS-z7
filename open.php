@@ -1,18 +1,14 @@
 <?php
 session_start();
 
-if($_SESSION["zalogowany"]!=1 /*OR empty($_SESSION["zalogowany"]*/){
+if($_SESSION["zalogowany"]!=1){
 	echo '<meta http-equiv="refresh" content="1; URL=index.php">';
 }else {
-?>
-<a href='index.php?wyloguj=tak'>wyloguj się</a><br>
-<?php
-include 'ostlog.php';
-echo "<br>";
-$dir = $_SESSION['user'];
-chdir($dir);
-$_SESSION['local'] = getcwd();
+echo '<a href="cloud.php">Powrot</a><br>';
+$path = $_SESSION['local'] . "/" . $_GET['opendir'];
 
+chdir($path);
+$_SESSION['local'] = getcwd();
 $files = scandir('.');
 foreach($files as $file) {
     if($file == '.' || $file == '..') 
@@ -22,12 +18,12 @@ foreach($files as $file) {
 	
 	if(is_dir($file))
 	{
-		print '<b>' . $file . '</b>'  ?><a href="open.php?opendir=<?php echo "$file"?>">  Wejdz do katalogu</a> <br><?php ;
+		print '<b>' . $file . '</b> <br>';
 	}else {
 		print $file ?><a href="pobierz.php?download=<?php echo "$file" ?>">  Pobierz</a> <br><?php ;
 	}
 }
-'<br>';
+
 include 'wyslij.html';
 include 'katalog.html';
 }

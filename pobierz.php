@@ -1,6 +1,6 @@
 <?php
 session_start();
-$file = $_SESSION['local']. "/" .$_POST['download'];
+$file = $_SESSION['local']. "/" .$_GET['download'];
 
 if (file_exists($file))
 {
@@ -26,7 +26,3 @@ if (file_exists($file))
 echo "<h1>Content error</h1><p>The file does not exist!</p>";
 echo '<meta http-equiv="refresh" content="1; URL=cloud.php">';
 ?>
-<form method="pobierz" action="pobierz.php">
-Wpisz nazwę pliku:<input type="text" name="download" maxlength="20" size="20">
-<input type="submit" value="Pobierz"/>
-</form>
