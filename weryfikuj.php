@@ -13,9 +13,9 @@ $user=$_POST['user'];
 $pass=$_POST['pass'];
 $_SESSION['user'] = $user;
 $servername = "localhost";
-$username = "21756671_15";
-$password = "zaq1@WSX";
-$dbname = "21756671_15";
+$username = "********";
+$password = "********";
+$dbname = "********";
 $conn = mysql_connect($servername, $username, $password, $dbname);
 mysql_select_db($dbname);
 	if(!conn) { echo "Błąd"; } 
